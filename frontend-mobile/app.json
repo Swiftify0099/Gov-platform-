@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "ExamPrep",
+    "slug": "exam-prep-platform",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.examprep.platform",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera is required for identity verification before exams",
+        "NSMicrophoneUsageDescription": "Microphone access for exam monitoring"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f172a"
+      },
+      "package": "com.examprep.platform",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "INTERNET"]
+    },
+    "plugins": [
+      ["expo-camera", { "cameraPermission": "Camera required for face verification" }]
+    ],
+    "extra": {
+      "eas": { "projectId": "your-eas-project-id" }
+    }
+  }
+}
