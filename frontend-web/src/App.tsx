@@ -16,7 +16,8 @@ import { SuperAdminDashboard } from './pages/superadmin/SuperAdminDashboard';
 const ProtectedRoute: React.FC<{ children: React.ReactNode; roles?: string[] }> = ({ children, roles }) => {
   const { isAuthenticated, user } = useSelector((s: RootState) => s.auth);
   if (!isAuthenticated) return <Navigate to="/login" replace />;
-  if (roles && user && !roles.includes(user.role)) return <Navigate to="/" replace />;
+  if (!user) return <div className="min-h-screen bg-slate-900 flex items-center justify-center text-slate-400">Loading profile...</div>;
+  if (roles && !roles.includes(user.role)) return <Navigate to="/" replace />;
   return <>{children}</>;
 };
 

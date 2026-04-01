@@ -61,3 +61,11 @@ async def get_current_super_admin(current_user: User = Depends(get_current_user)
     if current_user.role != "super_admin":
         raise HTTPException(status_code=403, detail="Super Admin access required")
     return current_user
+
+
+def require_role(*roles):
+    async def role_checker(current_user: User = Depends(get_current_user)) -> User:
+        if current_user.role not in roles and current_user.role != "super_admin":
+            raise HTTPException(status_code=403, detail=f"Access denied, requires one of {roles}")
+        return current_user
+    return role_checker

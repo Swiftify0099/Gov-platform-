@@ -4,11 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ActivityIndicator, View } from 'react-native';
 import { LoginScreen } from '../screens/auth/LoginScreen';
-import { OTPScreen } from '../screens/auth/OTPScreen';
+import OTPScreen from '../screens/auth/OTPScreen';
 import { DashboardScreen } from '../screens/student/DashboardScreen';
-import { ExamScreen } from '../screens/student/ExamScreen';
-import { ResultsScreen } from '../screens/student/ResultsScreen';
-import { AdminDashboardScreen } from '../screens/admin/AdminDashboardScreen';
+import ExamScreen from '../screens/student/ExamScreen';
+import ResultsScreen from '../screens/student/ResultsScreen';
+import AdminDashboardScreen from '../screens/admin/AdminDashboardScreen';
 
 const Stack = createNativeStackNavigator();
 

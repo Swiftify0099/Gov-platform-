@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || '[localhost](http://localhost:8000)';
+const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://127.0.0.1:8000';
 
 const DEFAULT_LOGINS = [
   { label: 'Super Admin', phone: '9000000000', otp: '123456', color: '#ef4444' },

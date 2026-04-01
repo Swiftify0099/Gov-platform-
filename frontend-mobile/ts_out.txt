@@ -1,0 +1,21 @@
+﻿src/components/QuestionCard.tsx(3,10): error TS2305: Module '"../store/index"' has no exported member 'Question'.
+src/i18n.ts(3,31): error TS2307: Cannot find module 'expo-localization' or its corresponding type declarations.
+src/navigation/RootNavigator.tsx(4,26): error TS2307: Cannot find module '@react-native-async-storage/async-storage' or its corresponding type declarations.
+src/navigation/RootNavigator.tsx(7,10): error TS2614: Module '"../screens/auth/OTPScreen"' has no exported member 'OTPScreen'. Did you mean to use 'import OTPScreen from "../screens/auth/OTPScreen"' instead?
+src/navigation/RootNavigator.tsx(9,10): error TS2614: Module '"../screens/student/ExamScreen"' has no exported member 'ExamScreen'. Did you mean to use 'import ExamScreen from "../screens/student/ExamScreen"' instead?
+src/navigation/RootNavigator.tsx(10,10): error TS2614: Module '"../screens/student/ResultsScreen"' has no exported member 'ResultsScreen'. Did you mean to use 'import ResultsScreen from "../screens/student/ResultsScreen"' instead?
+src/navigation/RootNavigator.tsx(11,10): error TS2614: Module '"../screens/admin/AdminDashboardScreen"' has no exported member 'AdminDashboardScreen'. Did you mean to use 'import AdminDashboardScreen from "../screens/admin/AdminDashboardScreen"' instead?
+src/screens/auth/LoginScreen.tsx(9,26): error TS2307: Cannot find module '@react-native-async-storage/async-storage' or its corresponding type declarations.
+src/screens/student/DashboardScreen.tsx(8,26): error TS2307: Cannot find module '@react-native-async-storage/async-storage' or its corresponding type declarations.
+src/screens/student/ExamScreen.tsx(86,26): error TS2345: Argument of type '["Results", { submissionId: any; }]' is not assignable to parameter of type '[screen: "Exam"] | [screen: "Exam", params: { assignmentId: string; }]'.
+  Type '["Results", { submissionId: any; }]' is not assignable to type '[screen: "Exam", params: { assignmentId: string; }]'.
+    Type at position 0 in source is not compatible with type at position 0 in target.
+      Type '"Results"' is not assignable to type '"Exam"'.
+src/screens/student/ProfileSetupScreen.tsx(54,33): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(name: string, value: string | Blob): void', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'string | Blob'.
+  Overload 2 of 3, '(name: string, value: string): void', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'string'.
+  Overload 3 of 3, '(name: string, blobValue: Blob, filename?: string): void', gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'Blob'.
+      Type '{}' is missing the following properties from type 'Blob': size, type, arrayBuffer, bytes, and 3 more.

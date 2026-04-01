@@ -11,6 +11,7 @@ interface ExamState {
   violationCount: number;
   isExamActive: boolean;
   faceVerified: boolean;
+  violationLogs: Array<{ type: string; timestamp: string; screenshot?: string }>;
 }
 
 const initialState: ExamState = {
@@ -23,6 +24,7 @@ const initialState: ExamState = {
   violationCount: 0,
   isExamActive: false,
   faceVerified: false,
+  violationLogs: [],
 };
 
 const examSlice = createSlice({
@@ -59,11 +61,14 @@ const examSlice = createSlice({
       state.isExamActive = false;
     },
     resetExam: () => initialState,
+    addViolationLog: (state, action: PayloadAction<{ type: string; timestamp: string; screenshot?: string }>) => {
+      state.violationLogs.push(action.payload);
+    },
   },
 });
 
 export const {
   startExam, setAnswer, setCurrentQuestion,
-  incrementViolation, setFaceVerified, endExam, resetExam
+  incrementViolation, setFaceVerified, endExam, resetExam, addViolationLog
 } = examSlice.actions;
 export default examSlice.reducer;

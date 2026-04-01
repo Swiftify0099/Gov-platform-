@@ -1,8 +1,9 @@
+/// <reference types="vite/client" />
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import { store } from '../store';
 import { logout, setTokens } from '../store/authSlice';
 
-const BASE_URL = import.meta.env.VITE_API_URL || '[localhost](http://localhost:8000)';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: BASE_URL,

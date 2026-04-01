@@ -38,7 +38,7 @@ export const fetchCurrentUser = createAsyncThunk(
   'auth/fetchCurrentUser',
   async (_, { rejectWithValue }) => {
     try {
-      const res = await apiClient.get('/api/users/me');
+      const res = await apiClient.get('/api/v1/users/me');
       return res.data;
     } catch (err: any) {
       return rejectWithValue(err.response?.data?.detail);
@@ -68,6 +68,14 @@ const authSlice = createSlice({
       state.user = action.payload;
       state.isAuthenticated = true;
     },
+    setCredentials: (state, action: PayloadAction<{ token: string; refreshToken: string; user: User }>) => {
+      state.token = action.payload.token;
+      state.refreshToken = action.payload.refreshToken;
+      state.user = action.payload.user;
+      state.isAuthenticated = true;
+      localStorage.setItem('access_token', action.payload.token);
+      localStorage.setItem('refresh_token', action.payload.refreshToken);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -87,5 +95,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout, setTokens, setUser } = authSlice.actions;
+export const { logout, setTokens, setUser, setCredentials } = authSlice.actions;
 export default authSlice.reducer;

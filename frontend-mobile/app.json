@@ -25,13 +25,26 @@
         "backgroundColor": "#0f172a"
       },
       "package": "com.examprep.platform",
-      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "INTERNET"]
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET"
+      ]
     },
     "plugins": [
-      ["expo-camera", { "cameraPermission": "Camera required for face verification" }]
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Camera required for face verification"
+        }
+      ],
+      "expo-localization"
     ],
     "extra": {
-      "eas": { "projectId": "your-eas-project-id" }
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
     }
   }
 }

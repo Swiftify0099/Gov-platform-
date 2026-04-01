@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List, Optional
 from functools import lru_cache
 
@@ -8,8 +8,8 @@ class Settings(BaseSettings):
     APP_NAME: str = "ExamPrepPlatform"
     ENVIRONMENT: str = "development"
     SECRET_KEY: str
-    FRONTEND_URL: str = "[localhost](http://localhost:5173)"
-    ALLOWED_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    FRONTEND_URL: str = "http://localhost:5173"
+    ALLOWED_ORIGINS: str = "http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173"
 
     # Database
     DATABASE_URL: str
@@ -60,7 +60,7 @@ class Settings(BaseSettings):
     PHONEPE_MERCHANT_ID: Optional[str] = None
     PHONEPE_SALT_KEY: Optional[str] = None
     PHONEPE_SALT_INDEX: int = 1
-    PHONEPE_BASE_URL: str = "[api-preprod.phonepe.com](https://api-preprod.phonepe.com/apis/pg-sandbox)"
+    PHONEPE_BASE_URL: str = "https://api-preprod.phonepe.com/apis/pg-sandbox"
 
     # Active Gateway
     ACTIVE_PAYMENT_GATEWAY: str = "razorpay"
@@ -76,6 +76,8 @@ class Settings(BaseSettings):
     DEFAULT_INSTITUTE_ADMIN_PHONE: str = "9000000001"
     DEFAULT_INSTITUTE_ADMIN_NAME: str = "Institute Admin"
 
+
+
     # Logging
     LOG_LEVEL: str = "INFO"
     LOG_FILE: str = "./logs/app.log"
@@ -90,6 +92,7 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+        extra = "ignore"
         case_sensitive = True
 
 

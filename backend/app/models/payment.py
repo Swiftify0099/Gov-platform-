@@ -49,7 +49,7 @@ class Payment(Base):
     amount = Column(Numeric(10, 2), nullable=False)
     currency = Column(String(10), default="INR")
     status = Column(Enum(PaymentStatus), default=PaymentStatus.PENDING)
-    metadata = Column(String(2000))
+    payment_metadata = Column(String(2000))
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
